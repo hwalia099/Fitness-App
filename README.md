@@ -100,7 +100,7 @@ The Fitness Exercises App is not just a fitness guide; it's a complete fitness c
 
 ### :chart: Domain Model
 
-![Domain Model for FitTrack](/assets/DomainDrivenDesign.png)
+![Domain Model for FitTrack](/assets/DomainDrivenDesignn.png)
 
 # Project Milestones and Team Assignments
 
