@@ -98,9 +98,9 @@ The Fitness Exercises App is not just a fitness guide; it's a complete fitness c
 
 - As a developer, I want to verify the food and nutrition page and associated actions.
 
-### :bar_chart: Domain Model
+### :chart: Domain Model
 
-![Domain Model for FitTrack](/assets/domainmodel.png)
+![Domain Model for FitTrack](/assets/DomainDrivenDesign.png)
 
 # Project Milestones and Team Assignments
 
