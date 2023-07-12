@@ -98,10 +98,6 @@ The Fitness Exercises App is not just a fitness guide; it's a complete fitness c
 
 - As a developer, I want to verify the food and nutrition page and associated actions.
 
-### :chart: Domain Model
-
-![Domain Model for FitTrack](/assets/DomainDrivenDesignn.png)
-
 # Project Milestones and Team Assignments
 
 ## Milestone 1: Project Setup
@@ -192,6 +188,11 @@ The relationships between these entities could be defined as:
 - **WorkoutSchedule-Workout**: Each workout schedule can have one or many workouts.
 
 - **User-ProgressReport**: Each user can have one progress report.
+
+ ### :chart: Domain Model
+
+![Domain Model for FitTrack](/assets/DomainDrivenDesignn.png)
+
 
 # REST API resources :
 
