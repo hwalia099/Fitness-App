@@ -64,19 +64,19 @@ The Fitness Exercises App is not just a fitness guide; it's a complete fitness c
 
 **9. User Authentication Testing**
 
-- As a tester, I want to verify the sign in/sign up feature with all the options such as email login, phone login, Gmail login, and check if account exists for phone, email.
+- As a developer, I want to verify the sign in/sign up feature with all the options such as email login, phone login, Gmail login, and check if account exists for phone, email.
 
 **10. User Profile Testing**
 
-- As a tester, I want to verify the profile setup for a new user and the profile update options to edit target weight etc. This should reflect a few parameter changes, for example, target BMI.
+- As a developer, I want to verify the profile setup for a new user and the profile update options to edit target weight etc. This should reflect a few parameter changes, for example, target BMI.
 
 **11. Graph Testing**
 
-- As a tester, I want to verify the various graphs plotted against each user.
+- As a developer, I want to verify the various graphs plotted against each user.
 
 **12. Data Entry Testing**
 
-- As a tester, I want to check the daily update mechanism for the calories intake, burn etc. Dates later than today should be disabled, and past data should be editable.
+- As a developer, I want to check the daily update mechanism for the calories intake, burn etc. Dates later than today should be disabled, and past data should be editable.
 
 **13. Workout Schedule Feature**
 
@@ -88,52 +88,52 @@ The Fitness Exercises App is not just a fitness guide; it's a complete fitness c
 
 **15. Exercise Features Testing**
 
-- As a tester, I want to validate the relevant exercises features page.
+- As a developer, I want to validate the relevant exercises features page.
 
 **16. Schedule Creation Testing**
 
-- As a tester, I want to verify the schedule creation page.
+- As a developer, I want to verify the schedule creation page.
 
 **17. Food and Nutrition Page Testing**
 
-- As a tester, I want to verify the food and nutrition page and associated actions.
+- As a developer, I want to verify the food and nutrition page and associated actions.
 
 # Project Milestones and Team Assignments
 
 ## Milestone 1: Project Setup
 
-1. Setup the project to define the folder structure, adding dependencies and tech stack setup to start the development.
-2. Create the signin/signup interface for the users to get onboarded to the application.
-3. Design the database architecture including the tables/collections etc to support the application features.
-4. Develop the APIs to display user details such as Name, Phone, Email etc for the user tab.
-5. Develop the screen for the new user to enter his basic details such as height, weight, age, etc and determine BMI based on these parameters.
-6. Test sign/signup feature with all the options such as email login, phone login, gmail login, account exists for phone, email
-7. Test profile set up for new user
-8. Test profile update option to edit the target weight etc. This should update a few parameters changes example target BMI
+1. Setup the project to define the folder structure, adding dependencies and tech stack setup to start the development. (Assigned to: Sunayana)
+2. Create the signin/signup interface for the users to get onboarded to the application. (Assigned to: Vignesh)
+3. Design the database architecture including the tables/collections etc to support the application features. (Assigned to: Himanshu)
+4. Develop the APIs to display user details such as Name, Phone, Email etc for the user tab. (Assigned to: Raksha)
+5. Develop the screen for the new user to enter his basic details such as height, weight, age, etc and determine BMI based on these parameters. (Assigned to: Sunayana)
+6. Test sign/signup feature with all the options such as email login, phone login, gmail login, account exists for phone, email(Assigned to: Vignesh)
+7. Test profile set up for new user (Assigned to: Himanshu)
+8. Test profile update option to edit the target weight etc. This should update a few parameters changes example target BMI (Assigned to: Raksha)
 
 ## Milestone 2: Exercises and Workout Schedule development
 
-9. Develop the workout schedule feature
-10. Develop muscle based exercises display feature
-11. Test the muscle based exercises display features page
-12. Test the workout schedule feature page
+9. Develop the workout schedule feature (Assigned to: Sunayana)
+10. Develop muscle based exercises display feature (Assigned to: Vignesh)
+11. Test the muscle based exercises display features page (Assigned to: Himanshu)
+12. Test the workout schedule feature page (Assigned to: Raksha)
 
 ## Milestone 3: Food and Nutrition
 
-13. Create the food and nutrition menu and develop associated actions
-14. Test daily updation for the calories intake, burn etc. Dates later than today should be disabled. Past data can be edited.
-15. Test the food and nutrition page to verify associated actions
+13. Create the food and nutrition menu and develop associated actions (Assigned to: Sunayana)
+14. Test daily updation for the calories intake, burn etc. Dates later than today should be disabled. Past data can be edited. (Assigned to: Vignesh)
+15. Test the food and nutrition page to verify associated actions (Assigned to: Himanshu)
 
 ## Milestone 4: Progress Tracker
 
-16. Create the track progress menu, with a calendar and give user the option to enter all the values he want to track
-17. Develop the dynamic graphs to be plotted
-18. Develop dynamic graph for adhoc date range provided
-19. Test various graphs plotted against each user
+16. Create the track progress menu, with a calendar and give user the option to enter all the values he want to track (Assigned to: Raksha)
+17. Develop the dynamic graphs to be plotted (Assigned to: Sunayana)
+18. Develop dynamic graph for adhoc date range provided (Assigned to: Vignesh)
+19. Test various graphs plotted against each user (Assigned to: Himanshu)
 
 ## Milestone 5: Deployment
 
-20. Deploy the application to make it available on internet.
+20. Deploy the application to make it available on internet. (Assigned to: Raksha)
 
 # Domain-Driven Design (DDD) object model
 
@@ -193,74 +193,74 @@ The relationships between these entities could be defined as:
 
 1. **Users Resource**:
 
-   - `GET /users`: Retrieve a list of all users.
-   - `GET /users/{userId}`: Retrieve details of a specific user.
-   - `POST /users`: Create a new user.
-   - `PUT /users/{userId}`: Update an existing user.
-   - `DELETE /users/{userId}`: Delete a user.
+- `GET /users`: Retrieve a list of all users.
+- `GET /users/{userId}`: Retrieve details of a specific user.
+- `POST /users`: Create a new user.
+- `PUT /users/{userId}`: Update an existing user.
+- `DELETE /users/{userId}`: Delete a user.
 
 2. **Profiles Resource**:
 
-   - `GET /users/{userId}/profile`: Retrieve the profile of a specific user.
-   - `POST /users/{userId}/profile`: Create a new profile for a user.
-   - `PUT /users/{userId}/profile`: Update an existing user profile.
-   - `DELETE /users/{userId}/profile`: Delete a user's profile.
+- `GET /users/{userId}/profile`: Retrieve the profile of a specific user.
+- `POST /users/{userId}/profile`: Create a new profile for a user.
+- `PUT /users/{userId}/profile`: Update an existing user profile.
+- `DELETE /users/{userId}/profile`: Delete a user's profile.
 
 3. **WorkoutSchedules Resource**:
 
-   - `GET /users/{userId}/workoutSchedules`: Retrieve a list of all workout schedules for a specific user.
-   - `GET /users/{userId}/workoutSchedules/{scheduleId}`: Retrieve details of a specific workout schedule.
-   - `POST /users/{userId}/workoutSchedules`: Create a new workout schedule for a user.
-   - `PUT /users/{userId}/workoutSchedules/{scheduleId}`: Update an existing workout schedule.
-   - `DELETE /users/{userId}/workoutSchedules/{scheduleId}`: Delete a workout schedule.
+- `GET /users/{userId}/workoutSchedules`: Retrieve a list of all workout schedules for a specific user.
+- `GET /users/{userId}/workoutSchedules/{scheduleId}`: Retrieve details of a specific workout schedule.
+- `POST /users/{userId}/workoutSchedules`: Create a new workout schedule for a user.
+- `PUT /users/{userId}/workoutSchedules/{scheduleId}`: Update an existing workout schedule.
+- `DELETE /users/{userId}/workoutSchedules/{scheduleId}`: Delete a workout schedule.
 
 4. **Exercises Resource**:
 
-   - `GET /exercises`: Retrieve a list of all exercises.
-   - `GET /exercises/{exerciseId}`: Retrieve details of a specific exercise.
-   - `POST /exercises`: Create a new exercise.
-   - `PUT /exercises/{exerciseId}`: Update an existing exercise.
-   - `DELETE /exercises/{exerciseId}`: Delete an exercise.
+- `GET /exercises`: Retrieve a list of all exercises.
+- `GET /exercises/{exerciseId}`: Retrieve details of a specific exercise.
+- `POST /exercises`: Create a new exercise.
+- `PUT /exercises/{exerciseId}`: Update an existing exercise.
+- `DELETE /exercises/{exerciseId}`: Delete an exercise.
 
 5. **Categories Resource**:
 
-   - `GET /categories`: Retrieve a list of all categories.
-   - `GET /categories/{categoryId}`: Retrieve details of a specific category.
-   - `POST /categories`: Create a new category.
-   - `PUT /categories/{categoryId}`: Update an existing category.
-   - `DELETE /categories/{categoryId}`: Delete a category.
+- `GET /categories`: Retrieve a list of all categories.
+- `GET /categories/{categoryId}`: Retrieve details of a specific category.
+- `POST /categories`: Create a new category.
+- `PUT /categories/{categoryId}`: Update an existing category.
+- `DELETE /categories/{categoryId}`: Delete a category.
 
 6. **ProgressRecords Resource**:
 
-   - `GET /users/{userId}/progressRecords`: Retrieve a list of all progress records for a specific user.
-   - `GET /users/{userId}/progressRecords/{recordId}`: Retrieve details of a specific progress record.
-   - `POST /users/{userId}/progressRecords`: Create a new progress record for a user.
-   - `PUT /users/{userId}/progressRecords/{recordId}`: Update an existing progress record.
-   - `DELETE /users/{userId}/progressRecords/{recordId}`: Delete a progress record.
+- `GET /users/{userId}/progressRecords`: Retrieve a list of all progress records for a specific user.
+- `GET /users/{userId}/progressRecords/{recordId}`: Retrieve details of a specific progress record.
+- `POST /users/{userId}/progressRecords`: Create a new progress record for a user.
+- `PUT /users/{userId}/progressRecords/{recordId}`: Update an existing progress record.
+- `DELETE /users/{userId}/progressRecords/{recordId}`: Delete a progress record.
 
 7. **Videos Resource**:
 
-   - `GET /videos`: Retrieve a list of all videos.
-   - `GET /videos/{videoId}`: Retrieve details of a specific video.
-   - `POST /videos`: Create a new video.
-   - `PUT /videos/{videoId}`: Update an existing video.
-   - `DELETE /videos/{videoId}`: Delete a video.
+- `GET /videos`: Retrieve a list of all videos.
+- `GET /videos/{videoId}`: Retrieve details of a specific video.
+- `POST /videos`: Create a new video.
+- `PUT /videos/{videoId}`: Update an existing video.
+- `DELETE /videos/{videoId}`: Delete a video.
 
 8. **NutritionPlans Resource**:
 
-   - `GET /users/{userId}/nutritionPlans`: Retrieve a list of all nutrition plans for a specific user.
-   - `GET /users/{userId}/nutritionPlans/{planId}`: Retrieve details of a specific nutrition plan.
-   - `POST /users/{userId}/nutritionPlans`: Create a new nutrition plan for a user.
-   - `PUT /users/{userId}/nutritionPlans/{planId}`: Update an existing nutrition plan.
-   - `DELETE /users/{userId}/nutritionPlans/{planId}`: Delete a nutrition plan.
+- `GET /users/{userId}/nutritionPlans`: Retrieve a list of all nutrition plans for a specific user.
+- `GET /users/{userId}/nutritionPlans/{planId}`: Retrieve details of a specific nutrition plan.
+- `POST /users/{userId}/nutritionPlans`: Create a new nutrition plan for a user.
+- `PUT /users/{userId}/nutritionPlans/{planId}`: Update an existing nutrition plan.
+- `DELETE /users/{userId}/nutritionPlans/{planId}`: Delete a nutrition plan.
 
 9. **Meals Resource**:
 
-   - `GET /nutritionPlans/{planId}/meals`: Retrieve a list of all meals for a specific nutrition plan.
-   - `GET /nutritionPlans/{planId}/meals/{mealId}`: Retrieve details of a specific meal.
-   - `POST /nutritionPlans/{planId}/meals`: Create a new meal for a nutrition plan.
-   - `PUT /nutritionPlans/{planId}/meals/{mealId}`: Update an existing meal.
-   - `DELETE /nutritionPlans/{planId}/meals/{mealId}`: Delete a meal.
+- `GET /nutritionPlans/{planId}/meals`: Retrieve a list of all meals for a specific nutrition plan.
+- `GET /nutritionPlans/{planId}/meals/{mealId}`: Retrieve details of a specific meal.
+- `POST /nutritionPlans/{planId}/meals`: Create a new meal for a nutrition plan.
+- `PUT /nutritionPlans/{planId}/meals/{mealId}`: Update an existing meal.
+- `DELETE /nutritionPlans/{planId}/meals/{mealId}`: Delete a meal.
 
 10. **FoodItems Resource**:
 
