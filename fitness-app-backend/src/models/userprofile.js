@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const fitnessGoals = ["Loose Weight", "Maintain Weight"];
+const fitnessGoals = ["Loose Weight", "Maintain Weight", "Gain Weight"];
 
 const UserProfileSchema = new mongoose.Schema({
     userId: {
@@ -15,27 +15,27 @@ const UserProfileSchema = new mongoose.Schema({
         required: true
     },
     height: {
-        type: String,
+        type: Number,
         required: true
     },
     currentWeight: {
-        type: String,
+        type: Number,
         required: true
     },
     targetWeight: {
-        type: String,
+        type: Number,
         required: true
     },
     age: {
-        type: String,
+        type: Number,
         required: true
     },
     curentBmi: {
-        type: String,
+        type: Number,
         required: true
     },
     targetBmi: {
-        type: String,
+        type: Number,
         required: true
     },
     createdDate: {

@@ -7,26 +7,26 @@ export const search = async (params) =>{
 
 //added modifiedDate: new date() so that all updates and creates are marked with current date as modified date
 export const addProgressTracker = async(newProgressTracker) => {
-    const ProgressTracker = new ProgressTracker({ ...newProgressTracker, modifiedDate: new Date() });
-    return ProgressTracker.save();
+    const progressTracker = new ProgressTracker({ ...newProgressTracker, modifiedDate: new Date() });
+    return progressTracker.save();
 }
 
 
 export const getById = async(id) => {
-    const ProgressTracker = ProgressTracker.findById(id).exec();
-    return ProgressTracker;
+    const progressTracker = ProgressTracker.findById(id).exec();
+    return progressTracker;
 }
 
 export const update = async(id, updatedProgressTracker) => {
-    const ProgressTracker = await ProgressTracker.findByIdAndUpdate(
+    const progressTracker = await ProgressTracker.findByIdAndUpdate(
         id,
         { ...updatedProgressTracker, modifiedDate: new Date() },
         { new: true }
       ).exec();
-    return ProgressTracker;
+    return progressTracker;
 }
 
 export const remove = async(id) =>{
-    const ProgressTracker = ProgressTracker.findByIdAndDelete(id).exec();
-    return ProgressTracker;
+    const progressTracker = ProgressTracker.findByIdAndDelete(id).exec();
+    return progressTracker;
 }
