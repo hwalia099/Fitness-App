@@ -5,6 +5,7 @@ import ExerciseDetail from './pages/ExerciseDetail';
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import TrackProgress from './pages/TrackProgress';
 
 import './App.css';
 
@@ -15,6 +16,7 @@ const App = () => {
       <Routes>
         <Route path="/" element ={<Home/>}/>
         <Route path="/exercise/:id" element ={<ExerciseDetail/>}/>
+        <Route path="/track" element= {<TrackProgress/>}/>
       </Routes>
       <Footer/>
     </Box>
