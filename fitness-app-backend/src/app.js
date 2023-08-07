@@ -7,10 +7,18 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true })); // Use extended: true for parsing URL-encoded data
 
 registerRoutes(app);
 
-mongoose.connect('mongodb+srv://israniraksha:2Sz%40wqb.H$y7ScQ@cluster0.tjojgrj.mongodb.net/FitnessApp');
+mongoose.connect('mongodb+srv://penajames099:AvKTAaofo3B7naep@cluster0.aajnrha.mongodb.net/?retryWrites=true&w=majority')
+    .then(() => {
+        console.log("Successfully connect to MongoDB.");
+        // Perform any initialization tasks here if needed
+    })
+    .catch(err => {
+        console.error("Connection error", err);
+        process.exit();
+    });
 
-export default app; 
+export default app;
