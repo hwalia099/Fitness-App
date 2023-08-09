@@ -72,7 +72,7 @@ const SignupForm = () => {
             const response = await signup(formData);
             console.log('Signup Successful', response);
             setSignupMessage('User created successfully');
-            navigate('/home');
+            navigate('/');
         } catch (error) {
             console.error('Signup Failed', error);
             setSignupMessage('Signup failed. Please try again.');

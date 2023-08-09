@@ -72,7 +72,7 @@ const LoginForm = () => {
             const response = await login(credentials);
             console.log('Login Successful', response);
             setLoginMessage('Login successful');
-            navigate('/home');
+            navigate('/');
         } catch (error) {
             console.error('Login Failed', error);
             setLoginMessage('Login unsuccessful');
