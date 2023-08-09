@@ -11,6 +11,14 @@
         "description": "Découvrez les exercices les plus efficaces",
         "buttonText": "Explorer les Exercices",
         "exerciseText": "Exercice"
+      },
+      "SearchExcercises": {
+        "title1": "Exercices impressionnants que vous",
+        "title2": "devriez connaître",
+        "buttonText": "Recherche",
+        "placeHolderText": "Recherchez un exercice"
+
       }
+      
   }
   

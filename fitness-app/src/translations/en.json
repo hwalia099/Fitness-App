@@ -11,6 +11,12 @@
       "description": "Check out the most effective exercises",
       "buttonText": "Explore Exercises",
       "exerciseText": "Exercise"
+    },
+    "SearchExcercises": {
+      "title1": "Awesome Exercises You",
+      "title2": "Should Know",
+      "buttonText": "Search",
+      "placeHolderText": "Search for Exercise"
     }
   }
   
