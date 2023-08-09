@@ -5,6 +5,7 @@ import ExerciseDetail from './pages/ExerciseDetail';
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import TrackProgress from './pages/TrackProgress';
 
 import './App.css';
 import SignupForm from './components/SignupForm';
@@ -40,8 +41,17 @@ const App = () => {
       path: '/auth/login',
       element: <LoginPage />,
     },
+    {
+      path: '/track',
+      element: (
+        <>
+          <Navbar />
+          <TrackProgress />
+          <Footer />
+        </>
+      ),
+    }
   ]);
-
   return (
     <Box width="400px" sx={{ width: { xl: '1488px' } }} m="auto">
       {routing}
