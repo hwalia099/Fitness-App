@@ -34,11 +34,11 @@ const Navbar = () => {
   };
 
   return (
-    <Stack direction="row" justifyContent="space-between" sx={{ gap: { sm: '122px', xs: '40px' }, mt: { sm: '32px', xs: '20px' } }} px="20px">
+    <Stack direction="row" gap="40px" fontSize={"24px"} alignItems="flex-end">
       <Link to="/">
         <img src={Logo} alt="logo" style={{ width: '48px', height: '48px', margin: '0 20px' }} />
       </Link>
-      <Stack direction="row" gap="40px" fontSize={"24px"} alignItems="flex-start">
+      <Stack direction="row" gap="40px" justifyContent="flex-start" fontSize={"24px"} alignItems="flex-start">
         <Link to="/" style={{ textDecoration: 'none', color: '#3A1212', borderBottom: '3px solid #FF2625' }}>{t('navbar.home')}</Link>
         <a href="#exercises" style={{ textDecoration: 'none', color: '#3A1212' }}>{t('navbar.exercises')}</a>
         <Link to="/track" style={{ textDecoration: 'none', color: '#3A1212' }}>{t('navbar.trackProgress')}</Link>

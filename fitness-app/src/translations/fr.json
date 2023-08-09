@@ -3,6 +3,14 @@
     "navbar.exercises": "Exercices",
     "navbar.trackProgress": "Suivi des progrès",
     "navbar.language.english": "Anglais",
-    "navbar.language.french": "Français"
+    "navbar.language.french": "Français",
+    "heroBanner": {
+        "title": "Club de Fitness",
+        "subtitle": "Sueur, Sourire",
+        "subtitle2": "et Répéter",
+        "description": "Découvrez les exercices les plus efficaces",
+        "buttonText": "Explorer les Exercices",
+        "exerciseText": "Exercice"
+      }
   }
   

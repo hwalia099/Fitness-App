@@ -3,6 +3,14 @@
     "navbar.exercises": "Exercises",
     "navbar.trackProgress": "Track Progress",
     "navbar.language.english": "English",
-    "navbar.language.french": "French"
+    "navbar.language.french": "French",
+    "heroBanner": {
+      "title": "Fitness Club",
+      "subtitle": "Sweat, Smile",
+      "subtitle2": "and Repeat",
+      "description": "Check out the most effective exercises",
+      "buttonText": "Explore Exercises",
+      "exerciseText": "Exercise"
+    }
   }
   
