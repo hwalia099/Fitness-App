@@ -10,6 +10,7 @@ import TrackProgress from './pages/TrackProgress';
 import './App.css';
 import SignupForm from './components/SignupForm';
 import LoginPage from './pages/LoginPage';
+import UserProfile from './pages/UserProfile';
 
 const App = () => {
   const routing = useRoutes([
@@ -50,7 +51,17 @@ const App = () => {
           <Footer />
         </>
       ),
-    }
+    },
+    {
+      path: '/profile',
+      element: (
+      <>
+      <Navbar />
+      <UserProfile />
+      <Footer />
+      </>
+      ),
+      }      
   ]);
   return (
     <Box width="400px" sx={{ width: { xl: '1488px' } }} m="auto">
