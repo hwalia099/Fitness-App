@@ -40,7 +40,7 @@ const Navbar = () => {
           Exercises
         </a>
         <Link
-          to="http://127.0.0.1:5173/"
+          to="/plan"
           style={{
             textDecoration: "none",
             color: "#3A1212",

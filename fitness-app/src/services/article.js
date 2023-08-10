@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const rapidApiKey = process.env.REACT_APP_RAPID_API_KEY;
+const rapidApiKey = "fb275f2e3fmsh4cfbc67c373f7d5p15c3e8jsn42a79862e35b";
 
 export const chatGptApi = createApi({
   reducerPath: "chatGptApi",
