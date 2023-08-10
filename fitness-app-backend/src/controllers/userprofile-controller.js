@@ -1,63 +1,64 @@
 import * as userProfileService from './../services/userprofile-service.js';
 
-import {setErrorResponse, setResponse} from './response-handler.js';
+import { setErrorResponse, setResponse } from './response-handler.js';
 
-export const index = async(request, response) => {
+export const index = async (request, response) => {
 
-    try{
-        const params = {...request.query};
+    try {
+        const params = { ...request.query };
         const userProfiles = await userProfileService.search(params);
         setResponse(userProfiles, response, 200);
-        
-    } catch (err){
+
+    } catch (err) {
         setErrorResponse(500, err, response);
     }
 
 }
 
-export const post = async(request, response) =>{
-    try{
+export const post = async (request, response) => {
+    try {
         const newuserProfile = request.body;
+        const userId = request.params.userId;
+        newuserProfile.userId = userId;
         const userProfile = await userProfileService.adduserProfile(newuserProfile);
         setResponse(userProfile, response, 201);
 
-    } catch(err) {
+    } catch (err) {
         console.log(err);
         setErrorResponse(500, err, response);
     }
 }
 
-export const getById = async (request, response) =>{
-    try{
+export const getById = async (request, response) => {
+    try {
         const id = request.params.id;
         const userProfile = await userProfileService.getById(id);
         setResponse(userProfile, response, 200);
-    } catch(err){
+    } catch (err) {
         setErrorResponse(500, err, response);
     }
 }
 
-export const put = async(request, response) =>{
-    try{
+export const put = async (request, response) => {
+    try {
         const id = request.params.id;
         const updateduserProfile = request.body;
         const userProfile = await userProfileService.update(id, updateduserProfile);
         setResponse(userProfile, response, 204);
-    } catch(err){
+    } catch (err) {
         setErrorResponse(500, err, response);
 
     }
 }
 
-export const remove = async(request, response) =>{
-    try{
+export const remove = async (request, response) => {
+    try {
         const id = request.params.id;
         const userProfile = await userProfileService.remove(id);
         setResponse({}, response, 200);
-    } catch(err){
+    } catch (err) {
         setErrorResponse(500, err, response);
 
     }
 }
 
-  

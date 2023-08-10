@@ -26,6 +26,10 @@ const App = () => {
       ),
     },
     {
+      path: "/userprofile/:userId",
+      element: <UserProfile />,
+    },
+    {
       path: '/exercise/:id',
       element: (
         <>
@@ -56,23 +60,23 @@ const App = () => {
     {
       path: '/profile',
       element: (
-      <>
-      <Navbar />
-      <UserProfile />
-      <Footer />
-      </>
-      )
-      },
-      {
-        path: '/profileview',
-        element: (
         <>
-        <Navbar />
-        <ViewUserProfile />
-        <Footer />
+          <Navbar />
+          <UserProfile />
+          <Footer />
         </>
-        )
-        }            
+      )
+    },
+    {
+      path: '/profileview',
+      element: (
+        <>
+          <Navbar />
+          <ViewUserProfile />
+          <Footer />
+        </>
+      )
+    }
   ]);
   return (
     <Box width="400px" sx={{ width: { xl: '1488px' } }} m="auto">

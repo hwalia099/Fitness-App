@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createProfile } from '../services/authService';
 import styled from 'styled-components';
+import { useParams } from 'react-router-dom';
+import { getUserInfo, updateUserProfile } from '../services/userService';
+import React, { useState, useEffect } from 'react';
 
 const FormContainer = styled.div`
   display: flex;
@@ -54,7 +56,12 @@ const UserProfileForm = () => {
     const navigate = useNavigate();
 
     const [message, setMessage] = useState('');
-
+    const { userId } = useParams();
+    const [userInfo, setUserInfo] = useState({
+        email: '',
+        phone: '',
+        username: '',
+    });
     const [userProfile, setUserProfile] = useState({
         userId: '64d3024530d81ec7df9e2eb1',
         currentWeight: 0,
@@ -65,6 +72,19 @@ const UserProfileForm = () => {
         gender: ''
     });
 
+    useEffect(() => {
+        // Fetch user info using userId
+        const fetchUserInfo = async () => {
+            try {
+                const response = await getUserInfo(userId);
+                setUserInfo(response); // Update user info state
+            } catch (error) {
+                // Handle error
+            }
+        };
+
+        fetchUserInfo();
+    }, [userId]);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -92,6 +112,11 @@ const UserProfileForm = () => {
         <FormContainer>
             <Title>Profile</Title>
             <form onSubmit={handleSubmit}>
+                <div>
+                    <p>Email: {userInfo.userEmail}</p>
+                    <p>Phone: {userInfo.userPhone}</p>
+                    <p>Username: {userInfo.userName}</p>
+                </div>
                 <Input
                     type="number"
                     name="currentWeight"
