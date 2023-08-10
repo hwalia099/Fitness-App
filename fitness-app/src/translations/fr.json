@@ -1,0 +1,24 @@
+{
+    "navbar.home": "Accueil",
+    "navbar.exercises": "Exercices",
+    "navbar.trackProgress": "Suivi des progrès",
+    "navbar.language.english": "Anglais",
+    "navbar.language.french": "Français",
+    "heroBanner": {
+        "title": "Club de Fitness",
+        "subtitle": "Sueur, Sourire",
+        "subtitle2": "et Répéter",
+        "description": "Découvrez les exercices les plus efficaces",
+        "buttonText": "Explorer les Exercices",
+        "exerciseText": "Exercice"
+      },
+      "SearchExcercises": {
+        "title1": "Exercices impressionnants que vous",
+        "title2": "devriez connaître",
+        "buttonText": "Recherche",
+        "placeHolderText": "Recherchez un exercice"
+
+      }
+      
+  }
+  

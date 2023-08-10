@@ -3,10 +3,12 @@ import { Box, Button, Stack, TextField, Typography } from '@mui/material';
 
 import { exerciseOptions, fetchData } from '../utils/fetchData';
 import HorizontalScrollbar from './HorizontalScrollbar';
+import { useTranslation } from 'react-i18next';
 
 const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
   const [search, setSearch] = useState('');
   const [bodyParts, setBodyParts] = useState([]);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const fetchExercisesData = async () => {
@@ -39,7 +41,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
   return (
     <Stack alignItems="center" mt="37px" justifyContent="center" p="20px">
       <Typography fontWeight={700} sx={{ fontSize: { lg: '44px', xs: '30px' } }} mb="49px" textAlign="center">
-        Awesome Exercises You <br /> Should Know
+       {t('SearchExcercises.title1')}<br /> {t('SearchExcercises.title2')}
       </Typography>
       <Box position="relative" mb="72px">
         <TextField
@@ -47,11 +49,11 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
           sx={{ input: { fontWeight: '700', border: 'none', borderRadius: '4px' }, width: { lg: '1170px', xs: '350px' }, backgroundColor: '#fff', borderRadius: '40px' }}
           value={search}
           onChange={(e) => setSearch(e.target.value.toLowerCase())}
-          placeholder="Search Exercises"
+          placeholder={t('SearchExcercises.placeHolderText')}
           type="text"
         />
         <Button className="search-btn" sx={{ bgcolor: '#FF2625', color: '#fff', textTransform: 'none', width: { lg: '173px', xs: '80px' }, height: '56px', position: 'absolute', right: '0px', fontSize: { lg: '20px', xs: '14px' } }} onClick={handleSearch}>
-          Search
+        {t('SearchExcercises.buttonText')}
         </Button>
       </Box>
       <Box sx={{ position: 'relative', width: '100%', p: '20px' }}>
