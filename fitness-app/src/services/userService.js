@@ -21,4 +21,13 @@ export const updateUserProfile = async (userId, profileData) => {
     }
 };
 
+export const adduserProfile = async (userId, profileData) => {
+    try {
+        const response = await axios.post(`${API_URL}/userprofile/${userId}`, profileData);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
+
 // Add other user-related functions if needed
