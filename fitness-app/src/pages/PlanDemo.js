@@ -29,12 +29,33 @@ const PlanDemo = () => {
     }));
   };
 
+  const ResponseCard = ({ response }) => {
+    const sections = response.split("\n");
+
+    return (
+      <div className="response-card">
+        {sections.map((section, index) => (
+          <p
+            key={index}
+            className={
+              section.includes("Exercise Plan") || section.includes("Diet Plan")
+                ? "section-title"
+                : ""
+            }
+          >
+            {section}
+          </p>
+        ))}
+      </div>
+    );
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const query = `You are a highly renowned health and nutrition expert FitnessGPT. 
-    Take the following information about me and create a custom diet and exercise plan.
-    I am ${details.Age}, ${details.Gender}, ${details.Height}. My current weight is ${details.CurrentWeight}.
+    Take the following information about me and create a custom diet and detailed exercise plan with excercises names in bullet point structured.
+    I am ${details.Age}, ${details.Gender}, ${details.Height}cm. My current weight is ${details.CurrentWeight} kg.
     My current medical conditions are ${details.MedicalConditions}. I have food allergies to ${details.FoodAllergies}.
     My primary fitness and health goals are ${details.PrimaryHealthAndFitnessGoals}. 
     I can commit to working out ${details.HowManyDaysCanYouWorkoutAWeek} days per week. 
@@ -238,8 +259,7 @@ const PlanDemo = () => {
 
       {data && (
         <div>
-          <h2>Response:</h2>
-          <p>{JSON.stringify(data.response)}</p>
+          <ResponseCard response={data.response} />
         </div>
       )}
 
