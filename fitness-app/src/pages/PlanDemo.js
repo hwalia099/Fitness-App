@@ -54,7 +54,7 @@ const PlanDemo = () => {
     e.preventDefault();
 
     const query = `You are a highly renowned health and nutrition expert FitnessGPT. 
-    Take the following information about me and create a custom diet and detailed exercise plan with excercises names in bullet point structured.
+    Take the following information about me and create a custom diet and detailed exercise plan for days in a week with excercises names and reps in bullet point structured.
     I am ${details.Age}, ${details.Gender}, ${details.Height}cm. My current weight is ${details.CurrentWeight} kg.
     My current medical conditions are ${details.MedicalConditions}. I have food allergies to ${details.FoodAllergies}.
     My primary fitness and health goals are ${details.PrimaryHealthAndFitnessGoals}. 
