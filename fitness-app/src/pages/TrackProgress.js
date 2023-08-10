@@ -31,9 +31,10 @@ const TrackProgress = () => {
 
     useEffect(() => {
         const fetchDataFromAPI = async () => {
+            console.log(localStorage.getItem('userId'));
             try {
                 const response = await fetchData(
-                    'http://localhost:9000/progresstracker?userId=64caff89f19cd3fb01987ec0',
+                    `http://localhost:9000/progresstracker?userId=${localStorage.getItem('userId')}`,
                     null
                 );
                 setExerciseData(response);

@@ -11,6 +11,7 @@ import './App.css';
 import SignupForm from './components/SignupForm';
 import LoginPage from './pages/LoginPage';
 import UserProfile from './pages/UserProfile';
+import ViewUserProfile from './pages/ViewUserProfile';
 
 const App = () => {
   const routing = useRoutes([
@@ -60,8 +61,18 @@ const App = () => {
       <UserProfile />
       <Footer />
       </>
-      ),
-      }      
+      )
+      },
+      {
+        path: '/profileview',
+        element: (
+        <>
+        <Navbar />
+        <ViewUserProfile />
+        <Footer />
+        </>
+        )
+        }            
   ]);
   return (
     <Box width="400px" sx={{ width: { xl: '1488px' } }} m="auto">

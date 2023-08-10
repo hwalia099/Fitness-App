@@ -54,6 +54,7 @@ const Message = styled.p`
 
 const LoginForm = () => {
     const navigate = useNavigate();
+    const [userId, setUserId] = useState(localStorage.getItem('userId') || '');
 
     const [credentials, setCredentials] = useState({
         userEmail: '',
@@ -70,7 +71,10 @@ const LoginForm = () => {
         e.preventDefault();
         try {
             const response = await login(credentials);
-            console.log('Login Successful', response);
+            const userIdfetched = response.userDetails._id;
+            console.log('Login Successful');
+            localStorage.setItem('userId', userIdfetched);
+            setUserId(userIdfetched);
             setLoginMessage('Login successful');
             navigate('/');
         } catch (error) {
