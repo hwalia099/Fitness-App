@@ -68,6 +68,9 @@ const Navbar = () => {
           <MenuItem onClick={() => handleLanguageChange('fr')}>
             {t('navbar.language.french')}
           </MenuItem>
+          <MenuItem onClick={() => handleLanguageChange('es')}>
+            {t('navbar.language.spanish')}
+          </MenuItem>
         </Menu>
       </Stack>
     </Stack>

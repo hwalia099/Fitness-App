@@ -2,8 +2,9 @@
     "navbar.home": "Accueil",
     "navbar.exercises": "Exercices",
     "navbar.trackProgress": "Suivi des progrès",
-    "navbar.language.english": "Anglais",
-    "navbar.language.french": "Français",
+    "navbar.language.english": "English",
+    "navbar.language.french": "French",
+    "navbar.language.spanish": "Spanish",
     "heroBanner": {
         "title": "Club de Fitness",
         "subtitle": "Sueur, Sourire",
@@ -18,7 +19,13 @@
         "buttonText": "Recherche",
         "placeHolderText": "Recherchez un exercice"
 
-      }
+      },
+      
+        "exercises": {
+          "showingResults": "Affichage des résultats"
+        }
+      
+      
       
   }
   
