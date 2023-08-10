@@ -1,0 +1,25 @@
+{
+    "navbar.home": "Inicio",
+    "navbar.exercises": "Ejercicios",
+    "navbar.trackProgress": "Seguir Progreso",
+    "navbar.language.english": "English",
+    "navbar.language.french": "French",
+    "navbar.language.spanish": "Spanish",
+    "heroBanner": {
+      "title": "Club de Fitness",
+      "subtitle": "Suda, Sonríe",
+      "subtitle2": "y Repite",
+      "description": "Descubre los ejercicios más efectivos",
+      "buttonText": "Explorar Ejercicios",
+      "exerciseText": "Ejercicio"
+    },
+    "SearchExcercises": {
+      "title1": "Ejercicios Increíbles Que",
+      "title2": "Deberías Conocer",
+      "buttonText": "Buscar",
+      "placeHolderText": "Buscar Ejercicio"
+    },
+    "exercises": {
+      "showingResults": "Mostrando Resultados"
+    }
+}

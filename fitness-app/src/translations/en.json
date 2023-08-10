@@ -4,6 +4,7 @@
     "navbar.trackProgress": "Track Progress",
     "navbar.language.english": "English",
     "navbar.language.french": "French",
+    "navbar.language.spanish": "Spanish",
     "heroBanner": {
       "title": "Fitness Club",
       "subtitle": "Sweat, Smile",
@@ -17,6 +18,9 @@
       "title2": "Should Know",
       "buttonText": "Search",
       "placeHolderText": "Search for Exercise"
+    },
+    "exercises": {
+      "showingResults": "Showing Results"
     }
   }
   
