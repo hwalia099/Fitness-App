@@ -19,7 +19,7 @@ export const login = async (req, res) => {
 
         // At this point, the user is authenticated
         // You can generate a token or session for the user here if needed
-        res.status(200).json({ message: 'Authentication successful' });
+        res.status(200).json({ message: 'Authentication successful' , userDetails: user});
     } catch (error) {
         res.status(500).json({ message: 'Something went wrong-500 error' });
     }

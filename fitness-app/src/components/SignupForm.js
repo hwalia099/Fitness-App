@@ -71,8 +71,9 @@ const SignupForm = () => {
         try {
             const response = await signup(formData);
             console.log('Signup Successful', response);
+            const userid = response.userId;
             setSignupMessage('User created successfully');
-            navigate('/');
+            navigate(`/userprofile/${userid}`);
         } catch (error) {
             console.error('Signup Failed', error);
             setSignupMessage('Signup failed. Please try again.');

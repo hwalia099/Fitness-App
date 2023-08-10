@@ -17,3 +17,13 @@ export const login = async (credentials) => {
         throw error.response.data;
     }
 };
+
+export const createProfile = async (userProfile) => {
+    try {
+        const response = await api.post('/userprofile', userProfile);
+        return response.data;
+    } catch (error) {
+        throw error.response.data;
+    }
+};
+

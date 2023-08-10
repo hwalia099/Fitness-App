@@ -10,6 +10,8 @@ import TrackProgress from './pages/TrackProgress';
 import './App.css';
 import SignupForm from './components/SignupForm';
 import LoginPage from './pages/LoginPage';
+import UserProfile from './pages/UserProfile';
+import ViewUserProfile from './pages/ViewUserProfile';
 
 const App = () => {
   const routing = useRoutes([
@@ -24,6 +26,10 @@ const App = () => {
       ),
     },
     {
+      path: "/userprofile/:userId",
+      element: <UserProfile />,
+    },
+    {
       path: '/exercise/:id',
       element: (
         <>
@@ -35,11 +41,17 @@ const App = () => {
     },
     {
       path: '/auth/signup',
-      element: <SignupForm />,
+      element: <>
+       <SignupForm />
+       <Footer />
+      </>
     },
     {
       path: '/auth/login',
-      element: <LoginPage />,
+      element:  <>
+      <LoginPage />
+      <Footer />
+     </>
     },
     {
       path: '/track',
@@ -50,6 +62,26 @@ const App = () => {
           <Footer />
         </>
       ),
+    },
+    {
+      path: '/profile',
+      element: (
+        <>
+          <Navbar />
+          <UserProfile />
+          <Footer />
+        </>
+      )
+    },
+    {
+      path: '/profileview',
+      element: (
+        <>
+          <Navbar />
+          <ViewUserProfile />
+          <Footer />
+        </>
+      )
     }
   ]);
   return (
