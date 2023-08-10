@@ -1,9 +1,7 @@
-import { useNavigate } from 'react-router-dom';
-import { createProfile } from '../services/authService';
-import styled from 'styled-components';
-import { useParams } from 'react-router-dom';
-import { getUserInfo, updateUserProfile } from '../services/userService';
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { getUserInfo, adduserProfile } from '../services/userService';
+import styled from 'styled-components';
 
 const FormContainer = styled.div`
   display: flex;
@@ -23,7 +21,29 @@ const Title = styled.h2`
   color: #333;
 `;
 
+const UserInfo = styled.div`
+  background-color: #f7f7f7;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+`;
+
+const UserInfoText = styled.p`
+  margin: 5px 0;
+  font-size: 16px;
+  color: #333;
+`;
+
 const Input = styled.input`
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+`;
+
+const Select = styled.select`
   width: 100%;
   padding: 12px;
   margin: 10px 0;
@@ -46,38 +66,26 @@ const Button = styled.button`
   }
 `;
 
-const Message = styled.p`
-  margin-top: 10px;
-  font-size: 14px;
-  color: ${({ success }) => (success ? '#009900' : '#cc0000')};
-`;
-
-const UserProfileForm = () => {
-    const navigate = useNavigate();
-
-    const [message, setMessage] = useState('');
+const UserProfilePage = () => {
     const { userId } = useParams();
     const [userInfo, setUserInfo] = useState({
         email: '',
         phone: '',
         username: '',
     });
-    const [userProfile, setUserProfile] = useState({
-        userId: '64d3024530d81ec7df9e2eb1',
-        currentWeight: 0,
-        targetWeight: 0,
-        age: 0,
-        height: 0,
-        goal: '',
-        gender: ''
+    const [additionalDetails, setAdditionalDetails] = useState({
+        userGoal: '',
+        height: '',
+        currentWeight: '',
+        targetWeight: '',
+        age: '',
     });
 
     useEffect(() => {
-        // Fetch user info using userId
         const fetchUserInfo = async () => {
             try {
                 const response = await getUserInfo(userId);
-                setUserInfo(response); // Update user info state
+                setUserInfo(response);
             } catch (error) {
                 // Handle error
             }
@@ -88,88 +96,84 @@ const UserProfileForm = () => {
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
-
-        // Convert age and height to numbers
         const parsedValue = name === 'age' || name === 'height' || name === 'targetWeight' || name === 'currentWeight' ? parseFloat(value) : value;
 
-        setUserProfile((prevCredentials) => ({ ...prevCredentials, [name]: parsedValue }));
+        setAdditionalDetails((prevCredentials) => ({ ...prevCredentials, [name]: parsedValue }));
     };
 
-
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    const handleAdditionalDetailsSubmit = async () => {
         try {
-            const response = await createProfile(userProfile);
-            console.log('Login Successful', response);
-            navigate('/');
+            const updatedProfile = {
+                ...userInfo,
+                ...additionalDetails,
+            };
+
+            await adduserProfile(userId, updatedProfile);
+            // Handle success or navigate to another page if needed
         } catch (error) {
-            console.error('Login Failed', error);
+            // Handle error
         }
     };
 
     return (
         <FormContainer>
-            <Title>Profile</Title>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <p>Email: {userInfo.userEmail}</p>
-                    <p>Phone: {userInfo.userPhone}</p>
-                    <p>Username: {userInfo.userName}</p>
-                </div>
-                <Input
-                    type="number"
-                    name="currentWeight"
-                    placeholder="Enter current weight in pounds"
-                    value={userProfile.currentWeight || ''}
-                    onChange={handleInputChange}
-                    min="0"
-                />
-                <Input
-                    type="number"
-                    name="targetWeight"
-                    placeholder="Enter target weight in pounds"
-                    value={userProfile.targetWeight || ''}
-                    onChange={handleInputChange}
-                    min="0"
-                />
-                <Input
-                    type="number"
-                    name="age"
-                    placeholder="Enter age"
-                    value={userProfile.age || ''}
-                    onChange={handleInputChange}
-                    min="0"
-                />
-                <Input
-                    type="number"
-                    name="height"
-                    placeholder="Enter height in cms"
-                    value={userProfile.height || ''}
-                    onChange={handleInputChange}
-                    min="0"
-                />
-                <select
-                    name="gender"
-                    value={userProfile.gender}
-                    onChange={handleInputChange}>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                </select>
-                <select
-                    name="goal"
-                    value={userProfile.goal}
-                    onChange={handleInputChange}>
-                    <option value="LooseWeight">Loose Weight</option>
-                    <option value="GainWeight">Gain Weight</option>
-
-                </select>
-
-                <Button type="submit">Submit Profile</Button>
-            </form>
-            <Message success={message === 'Login successful'}>{message}</Message>
+            <Title>User Profile</Title>
+            <UserInfo>
+                <UserInfoText>Email: {userInfo.userEmail}</UserInfoText>
+                <UserInfoText>Phone: {userInfo.userPhone}</UserInfoText>
+                <UserInfoText>Username: {userInfo.userName}</UserInfoText>
+            </UserInfo>
+            <h3>Compelte your profile</h3>
+            <Input
+                type="text"
+                name="height"
+                placeholder="Height"
+                value={additionalDetails.height}
+                onChange={handleInputChange}
+            />
+            <Input
+                type="text"
+                name="currentWeight"
+                placeholder="Current Weight"
+                value={additionalDetails.currentWeight}
+                onChange={handleInputChange}
+            />
+            <Input
+                type="text"
+                name="targetWeight"
+                placeholder="Target Weight"
+                value={additionalDetails.targetWeight}
+                onChange={handleInputChange}
+            />
+            <Input
+                type="text"
+                name="age"
+                placeholder="Age"
+                value={additionalDetails.age}
+                onChange={handleInputChange}
+            />
+            <Select
+                name="userGoal"
+                value={additionalDetails.goal}
+                onChange={handleInputChange}
+            >
+                <option value="">Select Goal</option>
+                <option value="Loose Weight">Loose Weight</option>
+                <option value="Gain Weight">Gain Weight</option>
+            </Select>
+            <Select
+                name="Gender"
+                value={additionalDetails.goal}
+                onChange={handleInputChange}
+            >
+                <option value="">Select Gender</option>
+                <option value="Loose Weight">Male</option>
+                <option value="Gain Weight">Female</option>
+                <option value="Loose Weight">Prefer not to say</option>
+            </Select>
+            <Button onClick={handleAdditionalDetailsSubmit}>Submit Profile</Button>
         </FormContainer>
     );
 };
 
-export default UserProfileForm;
+export default UserProfilePage;
