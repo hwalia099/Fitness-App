@@ -41,11 +41,17 @@ const App = () => {
     },
     {
       path: '/auth/signup',
-      element: <SignupForm />,
+      element: <>
+       <SignupForm />
+       <Footer />
+      </>
     },
     {
       path: '/auth/login',
-      element: <LoginPage />,
+      element:  <>
+      <LoginPage />
+      <Footer />
+     </>
     },
     {
       path: '/track',

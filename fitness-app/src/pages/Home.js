@@ -46,8 +46,8 @@ const Home = () => {
         <MenuItem onClick={handleLogout}>Log Out</MenuItem>
         <MenuItem onClick={handleViewProfile}>View Profile</MenuItem>
       </Menu>
-      {/* <SearchExercises setExercises={setExercises} bodyPart={bodyPart} setBodyPart={setBodyPart} />
-      <Exercises setExercises={setExercises} exercises={exercises} bodyPart={bodyPart} /> */}
+      <SearchExercises setExercises={setExercises} bodyPart={bodyPart} setBodyPart={setBodyPart} />
+      <Exercises setExercises={setExercises} exercises={exercises} bodyPart={bodyPart} />
     </Box>
   );
 };
