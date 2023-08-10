@@ -1,0 +1,36 @@
+.plan-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+  
+    .head_text {
+      font-size: 44px;
+      text-align: center;
+      margin-bottom: 16px;
+  
+      .orange_gradient {
+        background: linear-gradient(90deg, #FF8800, #FF5500);
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+  
+      @media (max-width: 768px) {
+        font-size: 20px;
+      }
+    }
+  
+    .desc {
+      font-size: 18px;
+      text-align: center;
+      margin-bottom: 24px;
+      color: #666;
+  
+      @media (max-width: 768px) {
+        font-size: 16px;
+      }
+    }
+  }
+  
