@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true })); // Use extended: true for parsi
 
 registerRoutes(app);
 
-mongoose.connect('mongodb+srv://penajames099:AvKTAaofo3B7naep@cluster0.aajnrha.mongodb.net/?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://israniraksha:2Sz%40wqb.H$y7ScQ@cluster0.tjojgrj.mongodb.net/FitnessApp')
     .then(() => {
         console.log("Successfully connect to MongoDB.");
         // Perform any initialization tasks here if needed
