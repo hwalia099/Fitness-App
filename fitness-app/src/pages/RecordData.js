@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import WorkoutRecordData from '../components/WorkoutRecordData';
-import '../styles/sharedStyles.css';
+import '../styles/RecordData.scss';
 import NutritionRecordData from '../components/NutritionRecordData';
 
 const RecordData = () => {
@@ -43,19 +43,20 @@ const RecordData = () => {
 
   return (
     <div className="container">
-      <div className="navbar">
+      {/* <div className="navbar">
     <a href="/">Home</a>
     <a href="/exercises">Exercises</a>
     <a href="/plan">Plan</a>
     <a href="/RecordData">Record Progress</a>
     <a href="/TrackProgress">Track Progress</a>
-</div>
+</div> */}
 
-      <h1>Record Your Daily Data</h1>
+      <h1 className='header-primary'>Record Your Daily Data</h1>
       <div className="date-picker">
-  <label>
+  <label className='date-label'>
     Select Date:
     <input 
+    className='date-input'
       type="date" 
       value={selectedDate} 
       max={new Date().toISOString().split('T')[0]}
@@ -64,7 +65,7 @@ const RecordData = () => {
   </label>
 </div>
 
-      <p>Enter your nutritional intake and workout details for today. This tool is designed to help you monitor and improve your daily nutrition and workout habits.</p>
+      <p className='instruction-text'>Enter your nutritional intake and workout details for today. This tool is designed to help you monitor and improve your daily nutrition and workout habits.</p>
       
       <section>
         <h2>Nutritional Intake</h2>
@@ -103,7 +104,7 @@ const RecordData = () => {
 
           <p><strong>Total Calories Consumed Today:</strong> {totalCaloriesConsumed}</p>
           {/* <NutritionRecordData/> */}
-          <button onClick={handleSubmit} disabled={loading}>
+          <button className='btn' onClick={handleSubmit} disabled={loading}>
             {loading ? "Saving..." : "Save Total Calories"}
           </button>
           
