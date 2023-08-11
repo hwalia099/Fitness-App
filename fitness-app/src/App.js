@@ -12,6 +12,7 @@ import SignupForm from './components/SignupForm';
 import LoginPage from './pages/LoginPage';
 import UserProfile from './pages/UserProfile';
 import ViewUserProfile from './pages/ViewUserProfile';
+import RecordData from './pages/RecordData';
 
 const App = () => {
   const routing = useRoutes([
@@ -64,6 +65,16 @@ const App = () => {
       ),
     },
     {
+      path: '/recorddata',
+      element: (
+        <>
+          <Navbar />
+          <RecordData />
+          <Footer />
+        </>
+      ),
+    },
+    {
       path: '/profile',
       element: (
         <>
@@ -85,9 +96,11 @@ const App = () => {
     }
   ]);
   return (
-    <Box width="400px" sx={{ width: { xl: '1488px' } }} m="auto">
+
+<Box width="400px" sx={{ width: { xl: '1488px' } }} m="auto">
       {routing}
     </Box>
+    
   );
 };
 

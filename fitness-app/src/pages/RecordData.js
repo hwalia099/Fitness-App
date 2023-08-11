@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import NutritionInput from '../components/NutritionInput';
 import WorkoutInput from '../components/WorkoutInput';
-import '../styles/sharedStyles.css';
+//import '../styles/sharedStyles.css';
 
 const RecordData = () => {
   const [breakfastCalories, setBreakfastCalories] = useState("");
@@ -41,13 +41,13 @@ const RecordData = () => {
 
   return (
     <div className="container">
-      <div className="navbar">
+      {/* <div className="navbar">
     <a href="/">Home</a>
     <a href="/exercises">Exercises</a>
     <a href="/plan">Plan</a>
     <a href="/RecordData">Record Progress</a>
     <a href="/TrackProgress">Track Progress</a>
-</div>
+</div> */}
 
       <h1>Record Your Daily Data</h1>
       <div className="date-picker">
