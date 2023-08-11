@@ -5,7 +5,6 @@ import UserProfileForm from '../components/UserProfileForm';
 const UserProfile = () => {
     return (
         <div>
-            <h2>User Profile</h2>
             <UserProfileForm />
         </div>
     );

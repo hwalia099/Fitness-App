@@ -1,54 +1,85 @@
+import styled from 'styled-components';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { signup } from '../services/authService';
-import styled from 'styled-components';
 
-const FormContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
-  margin: 0 auto;
-  background-color: #ffffff;
-`;
-
-const Title = styled.h2`
-  margin-bottom: 15px;
-  font-size: 24px;
-  color: #333;
-`;
-
-const Input = styled.input`
+const Container = styled.div`
+  height: 100vh;
   width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(253, 101, 133, 1) 0%,
+    rgba(255, 211, 165, 1) 90%
+  );
 `;
 
-const Button = styled.button`
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 12px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.2s;
-  &:hover {
-    background-color: #0056b3;
+const Card = styled.div`
+  border-radius: 10px;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+  width: 400px;
+  height: 400px;
+  background-color: #ffffff;
+  padding: 10px 30px;
+`;
+
+const CardTitle = styled.div`
+  text-align: center;
+  padding: 10px;
+`;
+
+const Title = styled.h1`
+  font-size: 26px;
+  font-weight: bold;
+`;
+
+const Form = styled.div`
+  input {
+    margin: 10px 0;
+    width: 100%;
+    background-color: #e2e2e2;
+    border: none;
+    outline: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+  }
+
+  button {
+    background-color: #4796ff;
+    color: #ffffff;
+    font-size: 16px;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    padding: 8px 15px;
+    width: 100%;
   }
 `;
 
-const Message = styled.p`
-  margin-top: 10px;
-  font-size: 14px;
-  color: ${({ success }) => (success ? '#009900' : '#cc0000')};
+const CardTerms = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 10px;
+
+  input[type="checkbox"] {
+    background-color: #e2e2e2;
+  }
+
+  span {
+    margin: 5px;
+    font-size: 13px;
+  }
 `;
+
+const CardLink = styled.a`
+  color: #4796ff;
+  text-decoration: none;
+`;
+
+
+
 
 const SignupForm = () => {
     const navigate = useNavigate();
@@ -81,43 +112,48 @@ const SignupForm = () => {
     };
 
     return (
-        <FormContainer>
-            <Title>Create an Account</Title>
-            <form onSubmit={handleSubmit}>
-                <Input
-                    type="text"
-                    name="userName"
-                    placeholder="Name"
-                    value={formData.userName}
-                    onChange={handleInputChange}
-                />
-                <Input
-                    type="email"
-                    name="userEmail"
-                    placeholder="Email"
-                    value={formData.userEmail}
-                    onChange={handleInputChange}
-                />
-                <Input
-                    type="text"
-                    name="userPhone"
-                    placeholder="Phone"
-                    value={formData.userPhone}
-                    onChange={handleInputChange}
-                />
-                <Input
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    value={formData.password}
-                    onChange={handleInputChange}
-                />
-                <Button type="submit">Sign Up</Button>
-            </form>
-            <Message success={signupMessage === 'User created successfully'}>
-                {signupMessage}
-            </Message>
-        </FormContainer>
+        <Container>
+            <Card>
+                <CardTitle>
+                    <Title>Create Account</Title>
+                    <span>
+                        Already have an account? <CardLink href="login">Sign In</CardLink>
+                    </span>
+                </CardTitle>
+                <Form>
+                    <form onSubmit={handleSubmit}>
+                        <input type="text"
+                            name="userName"
+                            placeholder="Name"
+                            value={formData.userName}
+                            onChange={handleInputChange} />
+
+                        <input type="email"
+                            name="userEmail"
+                            placeholder="Email"
+                            value={formData.userEmail}
+                            onChange={handleInputChange} />
+                        <input type="text"
+                            name="userPhone"
+                            placeholder="Phone"
+                            value={formData.userPhone}
+                            onChange={handleInputChange} />
+                        <input type="password"
+                            name="password"
+                            placeholder="Password"
+                            value={formData.password}
+                            onChange={handleInputChange} />
+                        <button  > Sign Up</button>
+                    </form>
+                </Form>
+                <CardTerms>
+                    <input type="checkbox" name="" id="terms" />
+                    <span>
+                        I have read and agree to the <CardLink href="">Terms of Service</CardLink>
+                    </span>
+                </CardTerms>
+            </Card>
+        </Container>
     );
 };
 
