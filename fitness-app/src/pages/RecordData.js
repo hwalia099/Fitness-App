@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import WorkoutRecordData from '../components/WorkoutRecordData';
+import Navbar from '../components/Navbar';
 import '../styles/RecordData.scss';
 import NutritionRecordData from '../components/NutritionRecordData';
 
@@ -50,6 +51,7 @@ const RecordData = () => {
     <a href="/RecordData">Record Progress</a>
     <a href="/TrackProgress">Track Progress</a>
 </div> */}
+
 
       <h1 className='header-primary'>Record Your Daily Data</h1>
       <div className="date-picker">
