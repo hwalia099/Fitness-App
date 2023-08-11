@@ -37,7 +37,7 @@ const Home = () => {
   return (
     <Box>
       <HeroBanner />
-      <Button onClick={handleMenuOpen}  position="absolute" top="10px" right="80px" variant="contained" color="error" >Menu</Button>
+      <Button onClick={handleMenuOpen} class='menu-button'>Menu</Button>
       <Menu
         anchorEl={menuAnchor}
         open={Boolean(menuAnchor)}

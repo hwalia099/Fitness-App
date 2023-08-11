@@ -12,6 +12,7 @@ import SignupForm from './components/SignupForm';
 import LoginPage from './pages/LoginPage';
 import UserProfile from './pages/UserProfile';
 import ViewUserProfile from './pages/ViewUserProfile';
+import Plan from './pages/Plan';
 
 const App = () => {
   const routing = useRoutes([
@@ -79,6 +80,16 @@ const App = () => {
         <>
           <Navbar />
           <ViewUserProfile />
+          <Footer />
+        </>
+      )
+    },
+    {
+      path: '/plan',
+      element: (
+        <>
+          <Navbar />
+          <Plan />
           <Footer />
         </>
       )
