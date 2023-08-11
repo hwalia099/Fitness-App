@@ -2,6 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getUserInfo, adduserProfile } from '../services/userService';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
+const Container = styled.div`
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(253, 101, 133, 1) 0%,
+    rgba(255, 211, 165, 1) 90%
+  );
+`;
 
 const FormContainer = styled.div`
   display: flex;
@@ -67,6 +80,7 @@ const Button = styled.button`
 `;
 
 const UserProfilePage = () => {
+    const navigate = useNavigate();
     const { userId } = useParams();
     const [userInfo, setUserInfo] = useState({
         email: '',
@@ -79,6 +93,7 @@ const UserProfilePage = () => {
         currentWeight: '',
         targetWeight: '',
         age: '',
+        gender: '',
     });
 
     useEffect(() => {
@@ -109,6 +124,7 @@ const UserProfilePage = () => {
             };
 
             await adduserProfile(userId, updatedProfile);
+            navigate(`/`);
             // Handle success or navigate to another page if needed
         } catch (error) {
             // Handle error
@@ -116,63 +132,66 @@ const UserProfilePage = () => {
     };
 
     return (
-        <FormContainer>
-            <Title>User Profile</Title>
-            <UserInfo>
-                <UserInfoText>Email: {userInfo.userEmail}</UserInfoText>
-                <UserInfoText>Phone: {userInfo.userPhone}</UserInfoText>
-                <UserInfoText>Username: {userInfo.userName}</UserInfoText>
-            </UserInfo>
-            <h3>Compelte your profile</h3>
-            <Input
-                type="text"
-                name="height"
-                placeholder="Height"
-                value={additionalDetails.height}
-                onChange={handleInputChange}
-            />
-            <Input
-                type="text"
-                name="currentWeight"
-                placeholder="Current Weight"
-                value={additionalDetails.currentWeight}
-                onChange={handleInputChange}
-            />
-            <Input
-                type="text"
-                name="targetWeight"
-                placeholder="Target Weight"
-                value={additionalDetails.targetWeight}
-                onChange={handleInputChange}
-            />
-            <Input
-                type="text"
-                name="age"
-                placeholder="Age"
-                value={additionalDetails.age}
-                onChange={handleInputChange}
-            />
-            <Select
-                name="userGoal"
-                value={additionalDetails.goal}
-                onChange={handleInputChange}
-            >
-                <option value="">Select Goal</option>
-                <option value="Loose Weight">Loose Weight</option>
-                <option value="Gain Weight">Gain Weight</option>
-            </Select>
-            <Select
-                name="Gender"
-                value={additionalDetails.goal}
-                onChange={handleInputChange}
-            >
-                <option value="">Select Gender</option>
-                <option value="Loose Weight">Male</option>
-                <option value="Gain Weight">Female</option>
-                <option value="Loose Weight">Prefer not to say</option>
-            </Select>
-            <Button onClick={handleAdditionalDetailsSubmit}>Submit Profile</Button>
-        </FormContainer>
+        <Container>
+            <FormContainer>
+                <Title>User Profile</Title>
+                <UserInfo>
+                    <UserInfoText><strong>Email:</strong> {userInfo.userEmail}</UserInfoText>
+                    <UserInfoText><strong>Phone:</strong>  {userInfo.userPhone}</UserInfoText>
+                    <UserInfoText><strong>Username:</strong>  {userInfo.userName}</UserInfoText>
+                </UserInfo>
+                <h3>Complete your profile</h3>
+                <Input
+                    type="text"
+                    name="height"
+                    placeholder="Height"
+                    value={additionalDetails.height}
+                    onChange={handleInputChange}
+                />
+                <Input
+                    type="text"
+                    name="currentWeight"
+                    placeholder="Current Weight"
+                    value={additionalDetails.currentWeight}
+                    onChange={handleInputChange}
+                />
+                <Input
+                    type="text"
+                    name="targetWeight"
+                    placeholder="Target Weight"
+                    value={additionalDetails.targetWeight}
+                    onChange={handleInputChange}
+                />
+                <Input
+                    type="text"
+                    name="age"
+                    placeholder="Age"
+                    value={additionalDetails.age}
+                    onChange={handleInputChange}
+                />
+                <Select
+                    name="userGoal"
+                    value={additionalDetails.goal}
+                    onChange={handleInputChange}
+                >
+                    <option value="">Select Goal</option>
+                    <option value="Loose Weight">Loose Weight</option>
+                    <option value="Gain Weight">Gain Weight</option>
+                </Select>
+                <Select
+                    name="gender"
+                    value={additionalDetails.gender}
+                    onChange={handleInputChange}
+                >
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Prefer not to say">Prefer not to say</option>
+                </Select>
+                <Button onClick={handleAdditionalDetailsSubmit}>Submit Profile</Button>
+            </FormContainer>
+        </Container>
+
     );
 };
 
