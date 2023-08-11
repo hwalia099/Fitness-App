@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import Exercises from '../components/Exercises';
 import SearchExercises from '../components/SearchExercises';
 import HeroBanner from '../components/HeroBanner';
-import './home.css';
+import '../styles/home.css';
 
 const Home = () => {
   const [exercises, setExercises] = useState([]);

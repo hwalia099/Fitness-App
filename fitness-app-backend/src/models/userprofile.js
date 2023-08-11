@@ -2,6 +2,7 @@ import mongoose from 'mongoose';
 
 const fitnessGoals = ["Loose Weight", "Maintain Weight", "Gain Weight"];
 
+//Has the user body type details such as height, weight his goal and stores bmi calculated based on these parameters
 const UserProfileSchema = new mongoose.Schema({
     userId: {
         type: mongoose.Schema.Types.ObjectId,

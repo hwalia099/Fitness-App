@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Box, ToggleButton, ToggleButtonGroup } from '@mui/material';
 import Chart from 'chart.js/auto';
-import './trackProgress.css';
+import '../styles/trackProgress.css';
 import { fetchData } from '../utils/fetchData';
 
 const TrackProgress = () => {

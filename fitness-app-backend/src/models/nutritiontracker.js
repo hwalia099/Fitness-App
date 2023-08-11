@@ -1,5 +1,7 @@
 import mongoose from 'mongoose';
 
+
+//Maintains the daily calorie intake for the user
 const NutritionTrackerSchema = new mongoose.Schema({
     userId: {
         type: mongoose.Schema.Types.ObjectId,
