@@ -1,11 +1,12 @@
 /* Base container settings */
-body {
+.body {
   padding-top: 50px;
-  background-color: #ebebeb; /* Slightly darker shade than previously */
+  background-color: #fff; /* Slightly darker shade than previously */
   height: 100vh; /* Full viewport height */
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 300px;
 }
 
 
@@ -73,6 +74,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    
   }
   .nutrition-input {
     display: flex;

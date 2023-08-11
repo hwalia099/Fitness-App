@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import WorkoutRecordData from '../components/WorkoutRecordData';
-import Navbar from '../components/Navbar';
 import '../styles/RecordData.scss';
-import NutritionRecordData from '../components/NutritionRecordData';
 
 const RecordData = () => {
   const [breakfastCalories, setBreakfastCalories] = useState("");
@@ -43,6 +41,7 @@ const RecordData = () => {
   };
 
   return (
+    <div className='body'>
     <div className="container">
       {/* <div className="navbar">
     <a href="/">Home</a>
@@ -75,7 +74,7 @@ const RecordData = () => {
 
         <div className="nutrition-input">
           <label>
-            Breakfast (in calories): 
+            Breakfast : 
             <input 
               type="text" 
               placeholder='enter your calories here!'
@@ -85,7 +84,7 @@ const RecordData = () => {
           </label>
 
           <label>
-            Lunch (in calories): 
+            Lunch : 
             <input 
               type="text" 
               placeholder='enter your calories here!'
@@ -95,7 +94,7 @@ const RecordData = () => {
           </label>
 
           <label>
-            Dinner (in calories): 
+            Dinner : 
             <input 
               type="text" 
               placeholder='enter your calories here!'
@@ -120,6 +119,7 @@ const RecordData = () => {
         <WorkoutRecordData />
         <p>Regular exercise combined with a balanced diet can significantly improve your physical and mental well-being. Stay consistent and track your progress!</p>
       </section>
+    </div>
     </div>
   );
 }
