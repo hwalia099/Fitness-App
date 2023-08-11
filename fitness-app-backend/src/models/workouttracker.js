@@ -1,5 +1,7 @@
 import mongoose from 'mongoose';
 
+
+//Maintains the daily calorie burnout from the workout for the user
 const WorkoutTrackerSchema = new mongoose.Schema({
     userId: {
         type: mongoose.Schema.Types.ObjectId,
