@@ -100,6 +100,7 @@ const UserProfilePage = () => {
         const fetchUserInfo = async () => {
             try {
                 const response = await getUserInfo(userId);
+                localStorage.setItem('userId', userId);
                 setUserInfo(response);
             } catch (error) {
                 // Handle error
