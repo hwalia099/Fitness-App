@@ -7,7 +7,6 @@ const ViewUserProfile = () => {
 
     return (
         <div>
-            <h2>My Profile</h2>
             <ShowUserProfile/>
         </div>
     )
