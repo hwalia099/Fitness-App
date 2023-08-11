@@ -103,7 +103,7 @@ const RecordData = () => {
             />
           </label>
 
-          <p><strong>Total Calories Consumed Today:</strong> {totalCaloriesConsumed}</p>
+          <p className='p-tag'><strong>Total Calories Consumed Today:</strong> {totalCaloriesConsumed}</p>
           {/* <NutritionRecordData/> */}
           <button className='btn' onClick={handleSubmit} disabled={loading}>
             {loading ? "Saving..." : "Save Total Calories"}
