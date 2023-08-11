@@ -1,25 +1,27 @@
 import * as nutritionTrackerService from './../services/nutritiontracker-service.js';
-
 import {setErrorResponse, setResponse} from './response-handler.js';
 
 export const index = async(request, response) => {
-
-    try{
+    try {
         const params = {...request.query};
-        const userProfiles = await nutritionTrackerService.search(params);
-        setResponse(userProfiles, response, 200);
-        
-    } catch (err){
+        const nutritionEntries = await nutritionTrackerService.search(params);
+        setResponse(nutritionEntries, response, 200);
+    } catch (err) {
         setErrorResponse(500, err, response);
     }
-
 }
 
-export const post = async(request, response) =>{
-    try{
-        const newuserProfile = request.body;
-        const userProfile = await nutritionTrackerService.addNutritionTracker(newuserProfile);
-        setResponse(userProfile, response, 201);
+export const post = async(request, response) => {
+    try {
+        const nutritionData = request.body;
+        const newNutritionTracker = await nutritionTrackerService.addNutritionTracker(nutritionData);  // Define newNutritionTracker here
+        console.log("Received data:", newNutritionTracker);
+        
+        if (!newNutritionTracker.date || !newNutritionTracker.userId) {
+            throw new Error("Invalid date or user ID provided.");
+        }
+
+        setResponse(newNutritionTracker, response, 201);
 
     } catch(err) {
         console.log(err);
@@ -27,37 +29,33 @@ export const post = async(request, response) =>{
     }
 }
 
-export const getById = async (request, response) =>{
-    try{
+export const getById = async(request, response) => {
+    try {
         const id = request.params.id;
-        const userProfile = await userProfileService.getById(id);
-        setResponse(userProfile, response, 200);
-    } catch(err){
+        const nutritionEntry = await nutritionTrackerService.getById(id);
+        setResponse(nutritionEntry, response, 200);
+    } catch(err) {
         setErrorResponse(500, err, response);
     }
 }
 
-export const put = async(request, response) =>{
-    try{
+export const put = async(request, response) => {
+    try {
         const id = request.params.id;
-        const updateduserProfile = request.body;
-        const userProfile = await userProfileService.update(id, updateduserProfile);
-        setResponse(userProfile, response, 204);
-    } catch(err){
+        const updatedNutritionData = request.body;
+        const nutritionEntry = await nutritionTrackerService.update(id, updatedNutritionData);
+        setResponse(nutritionEntry, response, 204);
+    } catch(err) {
         setErrorResponse(500, err, response);
-
     }
 }
 
-export const remove = async(request, response) =>{
-    try{
+export const remove = async(request, response) => {
+    try {
         const id = request.params.id;
-        const userProfile = await userProfileService.remove(id);
+        await nutritionTrackerService.remove(id);
         setResponse({}, response, 200);
-    } catch(err){
+    } catch(err) {
         setErrorResponse(500, err, response);
-
     }
 }
-
-  

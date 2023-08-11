@@ -5,7 +5,8 @@ const NutritionTrackerSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
         required: true
-    }, date: {
+    }, 
+    date: {
         type: Date,
         required: true,
     },
@@ -13,7 +14,6 @@ const NutritionTrackerSchema = new mongoose.Schema({
         type: Number,
         required: true
     }
-
 }, {
     versionKey: false
 });

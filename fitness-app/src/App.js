@@ -5,6 +5,7 @@ import ExerciseDetail from './pages/ExerciseDetail';
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import RecordData from './pages/RecordData';
 import TrackProgress from './pages/TrackProgress';
 
 import './App.css';
@@ -73,6 +74,16 @@ const App = () => {
           <Footer />
         </>
       )
+    },
+    {
+      path: '/RecordData',  // Add this route
+      element: (
+        <>
+          <Navbar />
+          <RecordData />
+          <Footer />
+        </>
+      ),
     },
     {
       path: '/profileview',

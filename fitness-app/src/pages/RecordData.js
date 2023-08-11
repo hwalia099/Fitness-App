@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import NutritionInput from '../components/NutritionInput';
-import WorkoutInput from '../components/WorkoutInput';
+import WorkoutRecordData from '../components/WorkoutRecordData';
 import '../styles/sharedStyles.css';
+import NutritionRecordData from '../components/NutritionRecordData';
 
 const RecordData = () => {
   const [breakfastCalories, setBreakfastCalories] = useState("");
@@ -21,15 +21,17 @@ const RecordData = () => {
     setSuccess(false);
 
     try {
-      const response = await axios.post('/api/nutrition', {
-        selectedDate,
+       const formattedDate = `${selectedDate}T00:00:00.000Z`;
+      const response = await axios.post('http://localhost:9000/nutritiontracker', {
+        userId : '64cb001290463f92812295cf',
+        date: formattedDate,
         totalCaloriesConsumed
       });
       
       if (response.data.success) {
         setSuccess(true);
       } else {
-        setError("Failed to save total calories consumed");
+        setError(true);
       }
 
     } catch (err) {
@@ -100,6 +102,7 @@ const RecordData = () => {
           </label>
 
           <p><strong>Total Calories Consumed Today:</strong> {totalCaloriesConsumed}</p>
+          {/* <NutritionRecordData/> */}
           <button onClick={handleSubmit} disabled={loading}>
             {loading ? "Saving..." : "Save Total Calories"}
           </button>
@@ -111,7 +114,7 @@ const RecordData = () => {
 
       <section>
         <h2>Workout Details</h2>
-        <WorkoutInput />
+        <WorkoutRecordData />
         <p>Regular exercise combined with a balanced diet can significantly improve your physical and mental well-being. Stay consistent and track your progress!</p>
       </section>
     </div>
