@@ -2,6 +2,8 @@
     "navbar.home": "Home",
     "navbar.exercises": "Exercises",
     "navbar.trackProgress": "Track Progress",
+    "navbar.AIPlanner": "AI Planner",
+    "navbar.RecordData": "Record Data",
     "navbar.language.english": "English",
     "navbar.language.french": "French",
     "navbar.language.spanish": "Spanish",
@@ -21,6 +23,11 @@
     },
     "exercises": {
       "showingResults": "Showing Results"
+    },
+    "home": {
+      "menu": "Menu",
+      "logOut": "Log Out",
+      "viewProfile": "View Profile"
     }
   }
   

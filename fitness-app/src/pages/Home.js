@@ -6,8 +6,11 @@ import Exercises from '../components/Exercises';
 import SearchExercises from '../components/SearchExercises';
 import HeroBanner from '../components/HeroBanner';
 import '../styles/home.css';
+import { useLanguage } from '../LanguageContext'; // Import the useLanguage hook
+import { useTranslation } from 'react-i18next';
 
 const Home = () => {
+  const { t } = useTranslation();
   const [exercises, setExercises] = useState([]);
   const [bodyPart, setBodyPart] = useState('all');
 
@@ -37,14 +40,14 @@ const Home = () => {
   return (
     <Box>
       <HeroBanner />
-      <Button onClick={handleMenuOpen} class='menu-button'>Menu</Button>
+      <Button onClick={handleMenuOpen} class='menu-button'>{t('home.menu')}</Button>
       <Menu
         anchorEl={menuAnchor}
         open={Boolean(menuAnchor)}
         onClose={handleMenuClose}
       >
-        <MenuItem onClick={handleLogout}>Log Out</MenuItem>
-        <MenuItem onClick={handleViewProfile}>View Profile</MenuItem>
+        <MenuItem onClick={handleLogout}>{t('home.logOut')}</MenuItem>
+        <MenuItem onClick={handleViewProfile}>{t('home.viewProfile')}</MenuItem>
       </Menu>
       <SearchExercises setExercises={setExercises} bodyPart={bodyPart} setBodyPart={setBodyPart} />
       <Exercises setExercises={setExercises} exercises={exercises} bodyPart={bodyPart} />

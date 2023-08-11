@@ -1,31 +1,35 @@
 {
-    "navbar.home": "Accueil",
-    "navbar.exercises": "Exercices",
-    "navbar.trackProgress": "Suivi des progrès",
-    "navbar.language.english": "English",
-    "navbar.language.french": "French",
-    "navbar.language.spanish": "Spanish",
-    "heroBanner": {
-        "title": "Club de Fitness",
-        "subtitle": "Sueur, Sourire",
-        "subtitle2": "et Répéter",
-        "description": "Découvrez les exercices les plus efficaces",
-        "buttonText": "Explorer les Exercices",
-        "exerciseText": "Exercice"
-      },
-      "SearchExcercises": {
-        "title1": "Exercices impressionnants que vous",
-        "title2": "devriez connaître",
-        "buttonText": "Recherche",
-        "placeHolderText": "Recherchez un exercice"
-
-      },
-      
-        "exercises": {
-          "showingResults": "Affichage des résultats"
-        }
-      
-      
-      
-  }
+  "navbar.home": "Accueil",
+  "navbar.exercises": "Exercices",
+  "navbar.trackProgress": "Suivre la progression",
+  "navbar.AIPlanner": "Planificateur IA",
+  "navbar.RecordData": "Enregistrer les données",
+  "navbar.language.english": "English",
+  "navbar.language.french": "French",
+  "navbar.language.spanish": "Spanish",
+  "heroBanner": {
+    "title": "Club de Fitness",
+    "subtitle": "Transpirez, Souriez",
+    "subtitle2": "et Répétez",
+    "description": "Découvrez les exercices les plus efficaces",
+    "buttonText": "Explorer les exercices",
+    "exerciseText": "Exercice"
+  },
+  "SearchExcercises": {
+    "title1": "Exercices impressionnants que vous",
+    "title2": "devriez connaître",
+    "buttonText": "Rechercher",
+    "placeHolderText": "Recherche d'exercice"
+  },
+  "exercises": {
+    "showingResults": "Affichage des résultats"
+  },
   
+    "home": {
+        "menu": "Menu",
+        "logOut": "Se déconnecter",
+        "viewProfile": "Voir le profil"
+    }
+
+
+}

@@ -1,25 +1,35 @@
 {
-    "navbar.home": "Inicio",
-    "navbar.exercises": "Ejercicios",
-    "navbar.trackProgress": "Seguir Progreso",
-    "navbar.language.english": "English",
-    "navbar.language.french": "French",
-    "navbar.language.spanish": "Spanish",
-    "heroBanner": {
-      "title": "Club de Fitness",
-      "subtitle": "Suda, Sonríe",
-      "subtitle2": "y Repite",
-      "description": "Descubre los ejercicios más efectivos",
-      "buttonText": "Explorar Ejercicios",
-      "exerciseText": "Ejercicio"
-    },
-    "SearchExcercises": {
-      "title1": "Ejercicios Increíbles Que",
-      "title2": "Deberías Conocer",
-      "buttonText": "Buscar",
-      "placeHolderText": "Buscar Ejercicio"
-    },
-    "exercises": {
-      "showingResults": "Mostrando Resultados"
+  "navbar.home": "Inicio",
+  "navbar.exercises": "Ejercicios",
+  "navbar.trackProgress": "Seguir Progreso",
+  "navbar.AIPlanner": "Planificador IA",
+  "navbar.RecordData": "Registrar Datos",
+  "navbar.language.english": "English",
+  "navbar.language.french": "French",
+  "navbar.language.spanish": "Spanish",
+  "heroBanner": {
+    "title": "Club de Fitness",
+    "subtitle": "Suda, Sonríe",
+    "subtitle2": "y Repite",
+    "description": "Descubre los ejercicios más efectivos",
+    "buttonText": "Explorar Ejercicios",
+    "exerciseText": "Ejercicio"
+  },
+  "SearchExcercises": {
+    "title1": "Increíbles Ejercicios Que",
+    "title2": "Deberías Conocer",
+    "buttonText": "Buscar",
+    "placeHolderText": "Buscar Ejercicio"
+  },
+  "exercises": {
+    "showingResults": "Mostrando Resultados"
+  },
+  
+    "home": {
+        "menu": "Menú",
+        "logOut": "Cerrar sesión",
+        "viewProfile": "Ver perfil"
     }
+
+
 }
