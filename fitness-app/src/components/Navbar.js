@@ -42,6 +42,15 @@ const Navbar = () => {
         <Link to="/" style={{ textDecoration: 'none', color: '#3A1212', borderBottom: '3px solid #FF2625' }}>{t('navbar.home')}</Link>
         <a href="#exercises" style={{ textDecoration: 'none', color: '#3A1212' }}>{t('navbar.exercises')}</a>
         <Link to="/track" style={{ textDecoration: 'none', color: '#3A1212' }}>{t('navbar.trackProgress')}</Link>
+        <Link
+          to="/plan"
+          style={{
+            textDecoration: "none",
+            color: "#3A1212",
+          }}
+        >
+          AI Planner
+        </Link>
         <IconButton
           onClick={handleLanguageMenuOpen}
           color="inherit"
