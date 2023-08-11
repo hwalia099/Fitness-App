@@ -7,6 +7,7 @@ export const search = async (params) =>{
 }
 
 //added modifiedDate: new date() so that all updates and creates are marked with current date as modified date
+// when a user add the workout in record data, it updates the contents for the track progress page as well
 export const addWorkoutTracker = async(newWorkoutTracker) => {
     var user = newWorkoutTracker.userId;
     var recorddate = new Date(newWorkoutTracker.date).toISOString();

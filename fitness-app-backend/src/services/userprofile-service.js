@@ -6,6 +6,7 @@ export const search = async (params) => {
 }
 
 //added modifiedDate: new date() so that all updates and creates are marked with current date as modified date
+// as the user adds his height, weight and other params calculate BMI 
 export const adduserProfile = async (newuserProfile) => {
     var currentWeightInKg = (newuserProfile.currentWeight) / 2.2046;
     var targetWeightInKg = (newuserProfile.targetWeight) / 2.2046;
@@ -45,6 +46,7 @@ export const getById = async (id) => {
     return userProfile;
 }
 
+//calculate BMI on update as other parameters are updated
 export const update = async (id, updateduserProfile) => {
     var currentWeightInKg = (updateduserProfile.currentWeight) / 2.2046;
     var targetWeightInKg = (updateduserProfile.targetWeight) / 2.2046;

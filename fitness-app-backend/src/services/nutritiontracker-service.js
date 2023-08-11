@@ -10,7 +10,7 @@ export const search = async (params) => {
         throw new Error("Failed to fetch nutrition data.");
     }
 }
-
+// when a user add the calories in record data, it updates the contents for the track progress page as well
 export const addNutritionTracker = async (newNutritionTracker) => {
     const session = await mongoose.startSession();
     session.startTransaction();
