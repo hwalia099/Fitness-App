@@ -14,12 +14,7 @@ Beyond exercises, the app also includes features for users to create a personal 
 
 The Fitness Exercises App is not just a fitness guide; it's a complete fitness companion that caters to both beginners and fitness enthusiasts alike. Whether you're looking to start your fitness journey or spice up your existing workout routine, the Fitness Exercises App has got you covered.
 
-# Team Members
 
-1. Raksha Israni
-2. Himanshu Walia
-3. Sunayana Shivanagi
-4. Vignesh Perumal Samy
 
 ## Project Features
 
